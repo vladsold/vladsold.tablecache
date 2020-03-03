@@ -1,0 +1,159 @@
+
+p{
+    color:rgba(255,255,255,.5);
+    width:100%;
+    margin: 100px auto;
+    text-align:center;
+}
+
+a{
+    text-decoration:none;
+    color:#fff;
+}
+.container{
+    max-width: 20em;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.line{
+    max-width: 20em;
+    padding-top: 15px;
+}
+
+.textdetails{
+    color:#fff;
+}
+
+/* Базовый стиль формы */
+.progressline {
+    margin: 0 auto;
+    max-width: 25em;
+    padding: 30px 30px 6px 30px;
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden;
+}
+/* Поле сообщения */
+textarea{
+    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 110px;
+    border: 1px solid rgba(255,255,255,.6);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    display:block;
+    font-family: 'Open Sans', sans-serif;
+    font-size:18px;
+    font-weight: 300;
+    color:#fff;
+    padding-left:25px;
+    padding-right:20px;
+    padding-top:12px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+.textinput {
+    width: 100%;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    display:block;
+    font-family: 'Open Sans', sans-serif;
+    font-size:14px;
+    font-weight: 300;
+    color:#fff;
+    margin-bottom:5px;
+}
+
+/* Поля ввода */
+input {
+    width: 5em;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.4);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    display:block;
+    font-family: 'Open Sans', sans-serif;
+    font-size:18px;
+    font-weight: 300;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    margin-bottom:20px;
+}
+
+input[type=submit] {
+    cursor:pointer;
+}
+input.block {
+    background: rgba(255, 255, 255, 0.4);
+    padding-left:25px;
+}
+input.sumbol {
+    background: rgba(255, 255, 255, 0.4);
+    padding-left:25px;
+}
+input.message {
+    background: rgba(255, 255, 255, 0.4);
+    padding-left:25px;
+}
+::-webkit-input-placeholder {
+    color: #fff;
+}
+:-moz-placeholder{
+    color: #fff;
+}
+::-moz-placeholder {
+    color: #fff;
+}
+:-ms-input-placeholder {
+    color: #fff;
+}
+input:focus, textarea:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    overflow: hidden;
+}
+/* Стили для кнопки отправить */
+.btn {
+    vertical-align: middle;
+    width: 138px;
+    height: 44px;
+    background: #a9acad;
+    color: #e1e1e1;
+    text-align: center;
+}
+
+.btn:hover {
+    border: 1px solid #253737;
+    background: darkred;
+    color: #fff;
+}
+
+.btn:active {
+    background: darkred;
+    color: #fff;
+}
