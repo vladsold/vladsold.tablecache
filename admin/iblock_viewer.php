@@ -3,10 +3,15 @@ session_name('TABLCECACHE');
 session_id('0000000777');
 session_set_cookie_params(3600);
 session_start();
-if (date('is') - $_SESSION['time_min'] > 300) { // 5 min
+
+$diff = time() - $_SESSION['time_min'];
+$second=$diff-(int)($diff/60)*60;
+
+if ($second > 300) {
     session_unset();
     session_destroy();
 }
+
 session_write_close();
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_before.php");
@@ -34,7 +39,7 @@ CJSCore::Init(array("vladsold.tablecache_ext"));
                     <? if (!$_SESSION['progress_status']): ?>
                         <div style="padding-top: 13px">Начать обход!</div>
                     <? else: ?>
-                        <div style="padding-top: 13px">Просмотр статуса</div>
+                        <div style="padding-top: 13px">Просмотр статуса<?=$_SESSION['time_min']?></div>
                     <? endif; ?>
                 </div>
             </div>

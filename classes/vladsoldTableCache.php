@@ -86,7 +86,7 @@ class vladsoldTableCache
                                 session_start();
                                 $_SESSION['progress_status'] = $catalog_percent_debug;
                                 $_SESSION['details_progress'] = $catalog_details_debug . $catalog_details_debug_subName . " (читаем)";
-                                $_SESSION['time_min'] = date('is');
+                                $_SESSION['time_min'] = time();
                                 session_write_close();
                             }
                         }
