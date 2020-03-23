@@ -39,7 +39,7 @@ CJSCore::Init(array("vladsold.tablecache_ext"));
                     <? if (!$_SESSION['progress_status']): ?>
                         <div style="padding-top: 13px">Начать обход!</div>
                     <? else: ?>
-                        <div style="padding-top: 13px">Просмотр статуса<?=$_SESSION['time_min']?></div>
+                        <div style="padding-top: 13px">Просмотр статуса</div>
                     <? endif; ?>
                 </div>
             </div>
