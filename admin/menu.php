@@ -19,7 +19,7 @@ if ($bUserIsAdmin) {
         "title" => GetMessage("MENU_DESCRIPTION"),
         "url" => "vladsold_tablecache_viewer.php?lang=" . LANGUAGE_ID,
         "icon" => "module_icon",
-        "items_id" => "menu_tablecache_parent",
+        "items_id" => "menu_vladsold_tablecache_parent",
         "module_id" => 'vladsold.tablecache',
         //"items" => $aSubMenu,
     );

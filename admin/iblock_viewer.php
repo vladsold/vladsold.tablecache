@@ -5,9 +5,9 @@ session_set_cookie_params(3600);
 session_start();
 
 $diff = time() - $_SESSION['time_min'];
-$second=$diff-(int)($diff/60)*60;
+//$second=$diff-(int)($diff/60)*60;
 
-if ($second > 300) {
+if ($diff > 300) {
     session_unset();
     session_destroy();
 }
