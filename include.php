@@ -1,8 +1,8 @@
 <?php
 
 
-$pathCSS = '/bitrix/panel/';
-$pathJS = '/bitrix/js/' . 'vladsold.tablecache';
+$pathCSS = '/bitrix/panel/vladsold.tablecache';
+$pathJS = '/bitrix/js/vladsold.tablecache';
 //$pathLang = BX_ROOT.'/modules/'.MODULE_ID.'/lang/'.LANGUAGE_ID;
 
 

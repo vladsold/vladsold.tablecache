@@ -47,7 +47,7 @@ class vladsold_tablecache extends CModule
         $countFile++;
 
         $this->allFilesInstall[$countFile]["pathFrom"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/" . $this->MODULE_ID . "/install/panel/styles.css";
-        $this->allFilesInstall[$countFile]["pathTo"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/panel/vladsold_tablecache_panel.css";
+        $this->allFilesInstall[$countFile]["pathTo"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/panel/" . $this->MODULE_ID . "/vladsold_tablecache_panel.css";
         $countFile++;
 
         $this->allFilesInstall[$countFile]["pathFrom"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/" . $this->MODULE_ID . "/install/js";
