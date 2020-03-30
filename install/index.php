@@ -6,7 +6,7 @@ IncludeModuleLangFile(__FILE__);
 
 class vladsold_tablecache extends CModule
 {
-    public $MODULE_ID = "vladsold.tablecache"; // class vladsold_tablecache
+    public $MODULE_ID = "vladsold.tablecache"; // class neevladsold_tablecache
     public $MODULE_VERSION;
     public $MODULE_VERSION_DATE;
     public $MODULE_NAME;
@@ -59,7 +59,7 @@ class vladsold_tablecache extends CModule
         $countFile++;
 
         $this->allFilesInstall[$countFile]["pathFrom"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/" . $this->MODULE_ID . "/install/themes/.default/module.css";
-        $this->allFilesInstall[$countFile]["pathTo"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/themes/.default/vladsold_tablecache.css";
+        $this->allFilesInstall[$countFile]["pathTo"] = $_SERVER["DOCUMENT_ROOT"] . "/bitrix/themes/.default/vladsold.tablecache.css";
         $countFile++;
 
     }
