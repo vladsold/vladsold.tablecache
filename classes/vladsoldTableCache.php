@@ -10,12 +10,12 @@ class vladsoldTableCache
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $file);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         if ($cookie) {
             curl_setopt($ch, CURLOPT_COOKIE, $cookie);
         }
@@ -29,14 +29,20 @@ class vladsoldTableCache
 
     function runList($blockIDForm, $symbolNameForm, $urlNameForm)
     {
+        session_name('TABLCECACHE');
+        session_id('0000000777');
+        session_start();
+        $_SESSION['time_min'] = time();
+        session_write_close();
+
         $catalogTopCategory = array();
-        $arSelect = Array("ID", "NAME");
+        $arSelect = array("ID", "NAME");
 
         $sect = CIBlockSection::GetList(
-            Array(
+            array(
                 array('sort' => 'asc'),
             ),
-            Array(
+            array(
                 'IBLOCK_ID' => $blockIDForm,
                 'SECTION_ID' => false,
                 'CATALOG_AVAILABLE' => 'Y',
@@ -47,7 +53,6 @@ class vladsoldTableCache
         while ($el = $sect->Fetch()) {
             $catalogTopCategory[$el["ID"]] .= $el["NAME"];
         }
-
 
         $count_cat_all = count($catalogTopCategory);
         $count_percent = 0;
@@ -60,7 +65,6 @@ class vladsoldTableCache
             $catalog_details_debug = $valueName . " --> ";
             $catalog_percent_debug = ceil(($count_percent * 100) / $count_cat_all) - 2;
 
-
             while ($subFolderLevel <= $this->maxLevelCatalog) {
                 $rsParentSection = CIBlockSection::GetByID($subFolderID);
                 if ($arParentSection = $rsParentSection->GetNext()) {
@@ -70,12 +74,11 @@ class vladsoldTableCache
                         '<RIGHT_MARGIN' => $arParentSection['RIGHT_MARGIN'],
                         'DEPTH_LEVEL' => $subFolderLevel,
                         'ACTIVE' => 'Y',
-                        'NAME' => "%".$symbolNameForm."%"
+                        'NAME' => "%" . $symbolNameForm . "%"
                     );
 
                     $rsSect = CIBlockSection::GetList(array('left_margin' => 'asc'), $arFilter,
                         array('ELEMENT_SUBSECTIONS' => 'Y', 'CNT_ACTIVE' => 'Y'));
-
                     while ($arSect = $rsSect->GetNext()) {
                         if (strpos($arSect['NAME'], $symbolNameForm) !== false && $arSect['ELEMENT_CNT'] > 1) {
                             $handle = $this->siteOpen($urlNameForm . $arSect['CODE'] . "/?" . $this->dopArgument);
@@ -89,6 +92,7 @@ class vladsoldTableCache
                                 $_SESSION['time_min'] = time();
                                 session_write_close();
                             }
+
                         }
 
                     }
@@ -107,6 +111,5 @@ class vladsoldTableCache
         $_SESSION['progress_status'] = 100;
         $_SESSION['details_progress'] = 'ok';
         session_write_close();
-
     }
 }
